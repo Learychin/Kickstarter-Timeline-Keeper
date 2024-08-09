@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wair Kickstarter Timeline Planner 好奇唯尔KS时间管理大师</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mx-auto mt-10">
+        <h1 class="text-center text-2xl font-bold mb-8">Horizontal Timeline Gantt Chart</h1>
+        <div class="flex justify-center mb-8">
+            <label for="start-date" class="mr-4">Enter Start Date (T):</label>
+            <input type="date" id="start-date" class="border border-gray-300 rounded p-2 mr-4">
+            <button onclick="generateChart()" class="bg-blue-500 text-white px-4 py-2 rounded">Generate Chart</button>
+        </div>
+        <table id="gantt-chart" class="w-full table-auto border-collapse border border-gray-300"></table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* General styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form input styles */
+.date-input label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #495057;
+}
+
+.date-input input,
+.date-input button {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.date-input button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.date-input button:hover {
+    background-color: #0056b3;
+}
+
+/* Gantt chart table */
+.chart {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.chart th, 
+.chart td {
+    padding: 10px;
+    text-align: left;
+    border-right: 1px solid #dee2e6;
+    vertical-align: top;
+}
+
+/* Timeline date headers */
+.date-row th {
+    background-color: #e9ecef;
+    color: #495057;
+    border-bottom: 2px solid #ced4da;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Subtask styling */
+.subtask {
+    padding-left: 20px;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Task bar container */
+.bar-container {
+    position: relative;
+    height: 24px;
+    margin: 5px 0;
+}
+
+/* Task bar styles */
+.bar {
+    position: absolute;
+    height: 100%;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    font-size: 0.875rem;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Category-specific colors */
+.project-management { background-color: #ffcc80; }
+.landing-page { background-color: #80d8ff; }
+.visual-assets { background-color: #a5d6a7; }
+.email-marketing { background-color: #ffab91; }
+.media-buy { background-color: #81c784; }
+.campaign-page { background-color: #f48fb1; }
+.pr { background-color: #b39ddb; }
+.social-community { background-color: #ffccbc; }
+.campaign-management { background-color: #b0bec5; }
+
+/* Timeline column divider */
+.date-column {
+    background-color: #f8f9fa;
+    border-left: 1px solid #dee2e6;
+    text-align: center;
+    min-width: 60px;
+    position: relative;
+    z-index: 0;
+}
+
+.date-column:not(:last-child):after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #dee2e6;
+    z-index: 1;
+}
