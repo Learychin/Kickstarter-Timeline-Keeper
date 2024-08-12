@@ -5,6 +5,7 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .min-h-screen {
@@ -16,6 +17,15 @@ body, html {
 .table-container {
     overflow-x: auto;
     white-space: nowrap; /* Prevent line break */
+}
+
+/* Remove dotted border and keep rounded corners with a solid background */
+.flex-grow {
+    background-color: #ffffff; /* Solid white background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a cleaner look */
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .chart th, 
