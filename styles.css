@@ -1,85 +1,80 @@
 /* General styles */
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f8f9fa;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Headings */
-h1 {
-    font-size: 2rem;
-    color: #343a40;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Form input styles */
-.date-input label {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #495057;
-}
-
-.date-input input,
-.date-input button {
-    font-size: 1rem;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-}
-
-.date-input button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.date-input button:hover {
-    background-color: #0056b3;
-}
-
-/* Gantt chart table */
-.chart {
+body, html {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+.min-h-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.table-container {
+    overflow-x: auto;
+    white-space: nowrap; /* Prevent line break */
 }
 
 .chart th, 
 .chart td {
     padding: 10px;
     text-align: left;
-    border-right: 1px solid #dee2e6;
-    vertical-align: top;
+    vertical-align: middle;
+    white-space: nowrap; /* Prevent line break */
+    border-bottom: 1px solid #e5e7eb; /* Subtle row dividers */
 }
 
 /* Timeline date headers */
 .date-row th {
-    background-color: #e9ecef;
-    color: #495057;
-    border-bottom: 2px solid #ced4da;
+    background-color: #f3f4f6;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1;
+    border-left: 1px solid #f1f1f1; /* Subtle column divider */
 }
 
-/* Subtask styling */
+/* Frozen first column */
+.chart th:first-child, 
+.chart td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #f9fafb; /* Slightly different background for the first column */
+    z-index: 2;
+    border-right: 1px solid #e5e7eb;
+    border-left: none; /* Remove left border for first column */
+}
+
+/* Task styling */
+.chart th:first-child {
+    font-weight: bold;
+    color: #374151;
+    background-color: #f9fafb; /* Match background with first column */
+}
+
 .subtask {
+    font-weight: normal;
+    color: #374151; /* Darker text for subtasks */
     padding-left: 20px;
     font-style: italic;
-    color: #6c757d;
+}
+
+.chart td:first-child {
+    font-weight: bold; /* Make task names bold */
+}
+
+/* Alternating row colors */
+.chart tr:nth-child(even) {
+    background-color: #f9fafb; /* Light grey background for even rows */
+}
+
+.chart tr:nth-child(odd) {
+    background-color: #ffffff; /* White background for odd rows */
 }
 
 /* Task bar container */
@@ -104,24 +99,33 @@ h1 {
 }
 
 /* Category-specific colors */
-.project-management { background-color: #ffcc80; }
-.landing-page { background-color: #80d8ff; }
-.visual-assets { background-color: #a5d6a7; }
-.email-marketing { background-color: #ffab91; }
-.media-buy { background-color: #81c784; }
-.campaign-page { background-color: #f48fb1; }
-.pr { background-color: #b39ddb; }
-.social-community { background-color: #ffccbc; }
-.campaign-management { background-color: #b0bec5; }
+.project-management { background-color: #fb923c; }
+.landing-page { background-color: #38bdf8; }
+.visual-assets { background-color: #86efac; }
+.email-marketing { background-color: #fbbf24; }
+.media-buy { background-color: #4ade80; }
+.campaign-page { background-color: #f472b6; }
+.pr { background-color: #c4b5fd; }
+.social-community { background-color: #fdba74; }
+.campaign-management { background-color: #a1a1aa; }
 
 /* Timeline column divider */
 .date-column {
-    background-color: #f8f9fa;
-    border-left: 1px solid #dee2e6;
+    background-color: #f9fafb;
+    border-left: 1px solid #e5e7eb;
     text-align: center;
     min-width: 60px;
     position: relative;
     z-index: 0;
+}
+
+/* Alternating background colors for timeline columns */
+.date-column:nth-child(even) {
+    background-color: #f1f5f9; /* Light grey */
+}
+
+.date-column:nth-child(odd) {
+    background-color: #ffffff; /* White */
 }
 
 .date-column:not(:last-child):after {
@@ -131,6 +135,6 @@ h1 {
     top: 0;
     bottom: 0;
     width: 1px;
-    background-color: #dee2e6;
+    background-color: #e5e7eb;
     z-index: 1;
 }
