@@ -3,20 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wair Kickstarter Timeline Planner 好奇唯尔KS时间管理大师</title>
+    <title>Kickstarter Planner by Wair</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container mx-auto mt-10">
-        <h1 class="text-center text-2xl font-bold mb-8">Wair Kickstarter Timeline Planner 好奇唯尔KS时间管理大师</h1>
-        <div class="flex justify-center mb-8">
-            <label for="start-date" class="mr-4">Enter Start Date (T):</label>
-            <input type="date" id="start-date" class="border border-gray-300 rounded p-2 mr-4">
-            <button onclick="generateChart()" class="bg-blue-500 text-white px-4 py-2 rounded">Generate Chart</button>
+<body class="flex flex-col h-screen">
+    <header class="bg-white shadow flex-shrink-0">
+        <div class="max-w-full mx-auto py-6 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://cdn.shopify.com/s/files/1/0578/6687/9135/files/logo.png?v=1667187213" alt="Logo" class="h-10 mr-4">
+                <h1 class="text-3xl font-bold leading-tight text-gray-900">Kickstarter Planner by Wair</h1>
+            </div>
+            <div class="flex items-center">
+                <label for="start-date" class="mr-4 text-lg font-medium text-gray-700">Enter Start Date (T):</label>
+                <input type="date" id="start-date" class="border border-gray-300 rounded p-2 text-center">
+                <button onclick="generateChart()" class="ml-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Generate Chart
+                </button>
+            </div>
         </div>
-        <table id="gantt-chart" class="w-full table-auto border-collapse border border-gray-300"></table>
-    </div>
-    <script src="script.js"></script>
+    </header>
+    <main class="flex-grow bg-gray-100 flex flex-col overflow-hidden">
+        <div class="max-w-full mx-auto py-6 sm:px-6 lg:px-8 flex-grow flex flex-col">
+            <div class="flex-grow flex flex-col border-4 border-dashed border-gray-200 rounded-lg p-6 bg-white overflow-hidden">
+                <div class="table-container flex-grow overflow-x-auto">
+                    <table id="gantt-chart" class="min-w-full divide-y divide-gray-200 table-auto">
+                        <!-- Dynamic Content Here -->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+<script src="script.js"></script>
 </html>
